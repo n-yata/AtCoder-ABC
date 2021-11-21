@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define rep(i,n) for (int i = 0; i < (n); ++i)
+using ll = long long;
+
+template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return 1; } return 0; }
+template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; } return 0; }
+
+const ll INF = 1LL<<60;
+const ll MOD = 1'000'000'007;
+
+int main(){
+    string s;
+    cin >> s;
+    sort(s.begin(),s.end());
+    vector<int> v;
+    for(auto c : s) v.push_back(c);
+    for(int i = 97; i <=122; i++){
+        if(find(v.begin(),v.end(),i) == v.end()){
+            cout << (char)i << endl;
+            return 0;
+        }
+    }
+    cout << "None" << endl;
+    return 0;
+}
