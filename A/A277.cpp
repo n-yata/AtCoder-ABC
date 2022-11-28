@@ -1,7 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,n) for (int i = 0; i < (n); ++i)
+#define repn(i,num,n) for (int i = num; i < (n); ++i)
+#define PI 3.14159265359
 using ll = long long;
+using P = pair<int,int>;
 
 template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return 1; } return 0; }
 template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; } return 0; }
@@ -10,17 +13,15 @@ const ll INF = 1LL<<60;
 const ll MOD = 1'000'000'007;
 
 int main(){
-    string s;
-    cin >> s;
-    int n = s.size();
-    vector<vector<int>> dp(n+1,vector<int>(9));
-    rep(i,n+1) dp[i][0] = 1;
-    const int mod = 1000000007;
-    string t = "chokudai";
-    rep(i,n)rep(j,8){
-        if(s[i] != t[j]) dp[i+1][j+1] = dp[i][j+1];
-        else dp[i+1][j+1] = (dp[i][j+1]+dp[i][j])%mod;
+    int n,x;
+    cin >> n >> x;
+    rep(i,n){
+        int p;
+        cin >> p;
+        if(p != x) continue;
+        cout << i+1 << endl;
+        return 0;
     }
-    cout << dp[n][8] << endl;
+    
     return 0;
 }
